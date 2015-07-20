@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<web-app  
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"  
+    version="2.5">  
+    <servlet>  
+        <servlet-name>login</servlet-name>  
+        <servlet-class>controller.LoginServlet</servlet-class>  
+    </servlet>  
+  
+    <servlet-mapping>  
+        <servlet-name>login</servlet-name>  
+        <url-pattern>/LoginServlet</url-pattern>  
+    </servlet-mapping>  
+    
+    <servlet>  
+        <servlet-name>raw material</servlet-name>  
+        <servlet-class>controller.RawmaterialServlet</servlet-class>  
+    </servlet>  
+    
+    <servlet-mapping>  
+        <servlet-name>raw material</servlet-name>  
+        <url-pattern>/RawmaterialServlet</url-pattern>  
+    </servlet-mapping>  
+    
+    <servlet>  
+        <servlet-name>register</servlet-name>  
+        <servlet-class>controller.RegisterServlet</servlet-class>  
+    </servlet>  
+    
+    <servlet-mapping>  
+        <servlet-name>register</servlet-name>  
+        <url-pattern>/RegisterServlet</url-pattern>  
+    </servlet-mapping>
+    
+     <servlet>  
+        <servlet-name>inward</servlet-name>  
+        <servlet-class>controller.InwardServlet</servlet-class>  
+    </servlet>  
+    
+    <servlet-mapping>  
+        <servlet-name>inward</servlet-name>  
+        <url-pattern>/InwardServlet</url-pattern>  
+    </servlet-mapping>
+    
+     <servlet>  
+        <servlet-name>rejection</servlet-name>  
+        <servlet-class>controller.RejectionServlet</servlet-class>  
+    </servlet>  
+    
+    <servlet-mapping>  
+        <servlet-name>rejection</servlet-name>  
+        <url-pattern>/RejectionServlet</url-pattern>  
+    </servlet-mapping> 
+    
+    <servlet>  
+        <servlet-name>master</servlet-name>  
+        <servlet-class>controller.MasterServlet</servlet-class>  
+    </servlet>  
+    
+    <servlet-mapping>  
+        <servlet-name>master</servlet-name>  
+        <url-pattern>/MasterServlet</url-pattern>  
+    </servlet-mapping> 
+    
+    <servlet>  
+        <servlet-name>masters</servlet-name>  
+        <servlet-class>controller.MasterRawServlet</servlet-class>  
+    </servlet>  
+    
+    <servlet-mapping>  
+        <servlet-name>masters</servlet-name>  
+        <url-pattern>/MasterRawServlet</url-pattern>  
+    </servlet-mapping>  
+    
+    <servlet>  
+        <servlet-name>bom</servlet-name>  
+        <servlet-class>controller.MasterWIPServlet</servlet-class>  
+    </servlet>  
+    
+    <servlet-mapping>  
+        <servlet-name>bom</servlet-name>  
+        <url-pattern>/MasterWIPServlet</url-pattern>  
+    </servlet-mapping> 
+    
+    <servlet>  
+        <servlet-name>wip</servlet-name>  
+        <servlet-class>controller.WipServlet</servlet-class>  
+    </servlet>  
+    
+    <servlet-mapping>  
+        <servlet-name>wip</servlet-name>  
+        <url-pattern>/WipServlet</url-pattern>  
+    </servlet-mapping>   
+  
+   <servlet>  
+        <servlet-name>categorylist</servlet-name>  
+        <servlet-class>controller.CategoryListServlet</servlet-class>  
+    </servlet>  
+    
+    <servlet-mapping>  
+        <servlet-name>categorylist</servlet-name>  
+        <url-pattern>/CategoryListServlet</url-pattern>  
+    </servlet-mapping>   
+    
+     <servlet>  
+        <servlet-name>stocklist</servlet-name>  
+        <servlet-class>controller.StockListServlet</servlet-class>  
+    </servlet>  
+    
+    <servlet-mapping>  
+        <servlet-name>stocklist</servlet-name>  
+        <url-pattern>/StockListServlet</url-pattern>  
+    </servlet-mapping>   
+    
+     <servlet>  
+        <servlet-name>datelist</servlet-name>  
+        <servlet-class>controller.DateListServlet</servlet-class>  
+    </servlet>  
+    
+    <servlet-mapping>  
+        <servlet-name>datelist</servlet-name>  
+        <url-pattern>/DateListServlet</url-pattern>  
+    </servlet-mapping>   
+    <welcome-file-list>  
+        <welcome-file>Login.jsp</welcome-file>  
+    </welcome-file-list>  
+</web-app>  

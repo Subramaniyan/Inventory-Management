@@ -1,0 +1,100 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"  
+    pageEncoding="ISO-8859-1"%>  
+<%@ page import="java.sql.*" %>
+
+<html>
+<head>
+<link rel="stylesheet" href="style.css" />
+<title>RAW MATERIAL</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script src="jquery.js"></script>
+<script src="bootstrap.js"></script>
+</head>
+<body>
+    <h4>  
+        Hello,  
+        <%=session.getAttribute("name")%> !
+    </h4>  
+
+ <%
+   Connection con= null;
+   PreparedStatement ps = null;
+   ResultSet rs = null;
+   String driverName = "com.mysql.jdbc.Driver";
+   String url = "jdbc:mysql://localhost:3306/Inventory";
+   String user = "root";
+   String password = "killer";
+   String st=null;
+   String sql = "select name from rawmaterials";
+   Statement state;
+   
+   try {
+	   Class.forName(driverName);
+	   con = DriverManager.getConnection(url, user, password);
+	   ps = con.prepareStatement(sql);
+	   rs = ps.executeQuery();
+	%>
+	
+<div id=head>
+<div id=raw_new>
+<div class="container">
+  <p> <h3> <b> ENTER THE RAW MATERIAL DETAILS: </b> </h3> </p>
+  <form action="RawmaterialServlet" method="post">
+  
+  <div class="col-xs-4" >
+  <label for="ex2" ><b>RAW MATERIAL:</b> </label>
+  <br> 
+	<select name="rawmaterialType">
+	<option value="select"> Select raw material </option>
+	
+	<%
+	while(rs.next()){
+
+		String rawmaterialType = rs.getString("name");
+	%>
+
+	<option> <%=rawmaterialType%> </option>
+
+	<% 
+	}
+	} catch( SQLException ex ){
+	out.println(ex);
+	}
+	%>
+	</select>
+  </div>
+	
+	<div class="col-xs-4" style="margin-top:75px;
+		margin-left:-380px;" > 
+	 	<label for="ex2" ><b>QUANTITY:</b> </label>
+        <input class="form-control" id="ex3" type="text" name="quantity">
+	</div>
+      
+	<div class="col-xs-4"style="margin-top:150px;
+		margin-left:-380px;">
+        <label for="ex2"><b>INWARD:</b></label>
+        <input class="form-control" id="ex3" type="text" name="inward">
+      </div>
+
+	<div class="col-xs-4" style="margin-top:225px;
+		margin-left:-380px;">
+        <label for="ex2"><b>OUTWARD:</b></label>
+        <input class="form-control" id="ex3" type="text" name="outward">
+      </div>
+      
+	<div class="col-xs-4" style="margin-top:300px;
+		margin-left:-380px;" >
+        <label for="ex2"><b>REJECTION:</b></label>
+        <input class="form-control" id="ex3" type="text" name="rejection">
+      </div>
+	
+	<button style="margin-top:375px;
+		margin-left:-380px;" type="submit" class="btn btn-primary" >INSERT</button>
+	
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>
